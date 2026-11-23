@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">EchoNote</string>
+    <string name="auth_headline">Speak once.\nRemember effortlessly.</string>
+    <string name="auth_subheadline">Capture voice instructions in a tap. EchoNote organizes your words, syncs them to the cloud, and schedules alerts right on time.</string>
+    <string name="auth_google_sign_in">Sign in with Google</string>
+    <string name="auth_feature_cap_note">Minimalist cloud memory • Up to 20 active &amp; recent reminders</string>
+    <string name="home_section_upcoming">Upcoming</string>
+    <string name="home_section_completed">Completed</string>
+    <string name="home_empty_title">A quiet mind starts here</string>
+    <string name="home_empty_subtitle">Tap the microphone and speak naturally — e.g. \"Remind me tomorrow at 9 AM to submit the design review.\"</string>
+    <string name="home_mic_hint">Tap to speak a reminder</string>
+    <string name="home_recording_label">Listening…</string>
+    <string name="home_processing_label">Organizing note &amp; time…</string>
+    <string name="home_type_placeholder">Type an instruction with time &amp; topic…</string>
+    <string name="notification_channel_name">Scheduled Reminders</string>
+    <string name="notification_channel_description">Push alerts triggered at the time mentioned in your voice note.</string>
+    <string name="notification_action_done">Mark Done</string>
+    <string name="cap_reached_title">20-Reminder Limit Reached</string>
+    <string name="cap_reached_message">All 20 slots hold active reminders. Delete or complete one, or replace the oldest active reminder to save this note.</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_undo">Undo</string>
+    <string name="action_save">Save Changes</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_sign_out">Sign out</string>
+</resources>

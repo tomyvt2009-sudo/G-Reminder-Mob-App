@@ -1,0 +1,72 @@
+{
+  "entities": {
+    "Reminder": {
+      "title": "Reminder",
+      "description": "An AI-organized voice or text reminder note with optional scheduled push alert timestamp.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated Firebase UID of the reminder owner."
+        },
+        "topic": {
+          "type": "string",
+          "description": "Concise notification headline and note title (1-100 chars)."
+        },
+        "organizedNote": {
+          "type": "string",
+          "description": "AI-structured clean text note or bulleted summary (0-2000 chars)."
+        },
+        "rawTranscript": {
+          "type": "string",
+          "description": "Verbatim voice transcript or original typed entry (0-2000 chars)."
+        },
+        "category": {
+          "type": "string",
+          "enum": ["Work", "Personal", "Errand", "Health", "Finance", "General"],
+          "description": "Minimalist category tag assigned by AI or edited by the user."
+        },
+        "scheduledAtEpochMillis": {
+          "type": "integer",
+          "description": "Optional UTC epoch milliseconds extracted from the mentioned time for local push alert scheduling."
+        },
+        "completed": {
+          "type": "boolean",
+          "description": "Whether the reminder has been marked as done."
+        },
+        "completedAtEpochMillis": {
+          "type": "integer",
+          "description": "Optional UTC epoch milliseconds when the reminder was completed (used for 20-item archive ordering)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server creation timestamp written via FieldValue.serverTimestamp()."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server last-modified timestamp written via FieldValue.serverTimestamp()."
+        }
+      },
+      "required": [
+        "userId",
+        "topic",
+        "organizedNote",
+        "rawTranscript",
+        "category",
+        "completed",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/reminders/{reminderId}": {
+      "schema": {
+        "$ref": "#/entities/Reminder"
+      },
+      "description": "Per-user collection of up to 20 AI-processed voice reminders."
+    }
+  }
+}
